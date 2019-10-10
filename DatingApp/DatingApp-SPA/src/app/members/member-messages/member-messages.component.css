@@ -9,17 +9,12 @@
 }
 
 .chat li {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px dotted #B3A9A9;
+  height: 100;
+  width: 100;
 }
 
-.rounded-circle {
-  height: 50px;
-  width: 50px;
-}
 
 .card-body {
   overflow-y: scroll;
-  height: 400px;
+  height: 700px;
 }
