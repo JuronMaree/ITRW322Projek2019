@@ -27,14 +27,14 @@
             <span class="chat-img float-right pr-1 pt-1">
               <img src="{{message.senderPhotoUrl}}" alt="{{message.senderKnownAs}}" class="rounded-circle">
             </span>
-            <div class="talktext">
+            <div class="chat-body">
               <div class="talktext">
                   <small class="text-muted">
-                      <span class="fa fa-clock-o text-white">{{message.messageSent | timeAgo}}</span>
+                      <span class="fa fa-clock-o text-white text-right">{{message.messageSent | timeAgo}}</span>
                       <span *ngIf="!message.isRead" class="text-danger">(unread)</span>
                       <span *ngIf="message.isRead" class="text-success">(Read {{message.dateRead | timeAgo}})</span>
                     </small>
-                <strong class="primary-font float-right">{{message.senderKnownAs}}</strong>
+                <strong class="talktext">{{message.senderKnownAs}}</strong>
 
               </div>
               <p class="talktext">{{message.content}}</p>

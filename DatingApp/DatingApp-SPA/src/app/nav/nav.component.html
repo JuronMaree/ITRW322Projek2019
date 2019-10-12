@@ -1,6 +1,7 @@
+
 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: lightseagreen">
   <div class="container">
-    <a class="navbar-brand" [routerLink]="['/home']">Welcome to DWPMessenging</a>
+    <a class="navbar-brand" [routerLink]="['/home']">DWP Messaging</a>
 
     <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
@@ -13,11 +14,10 @@
         <a class="nav-link" [routerLink]="['/messages']">Messages</a>
       </li>
     </ul>
-
-    <div *ngIf="loggedIn()" class="dropdown" dropdown>
-      <span class="mr-1">
+    <span *ngIf="loggedIn()" class="mr-1">
         <img src="{{photoUrl || '../../assets/user.png'}}" alt="">
       </span>
+    <div *ngIf="loggedIn()" class="dropdown" dropdown>
       <a class="dropdown-toggle text-light" dropdownToggle>
         Welcome {{authService.decodedToken?.unique_name | titlecase}}
       </a>
