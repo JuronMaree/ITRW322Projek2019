@@ -14,7 +14,7 @@
     "@angular-devkit/build-angular": "^0.803.6",
     "@angular/animations": "^8.2.8",
     "@angular/common": "^8.2.8",
-    "@angular/compiler": "^8.2.8",
+    "@angular/compiler": "^8.2.11",
     "@angular/core": "^8.2.8",
     "@angular/forms": "^8.2.8",
     "@angular/http": "^7.2.15",
@@ -35,7 +35,7 @@
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
-    "@angular/cli": "^8.3.6",
+    "@angular/cli": "^8.3.9",
     "@angular/compiler-cli": "^8.2.8",
     "@angular/language-service": "^8.2.8",
     "@types/jasmine": "^3.4.2",
