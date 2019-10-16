@@ -4,6 +4,9 @@ import { UserService } from '../../_services/user.service';
 import { AuthService } from '../../_services/auth.service';
 import { AlertifyService } from '../../_services/alertify.service';
 import { tap } from 'rxjs/operators';
+import { FileUploader } from 'ng2-file-upload';
+import { environment } from 'src/environments/environment';
+import { Photo } from 'src/app/_models/photo';
 
 @Component({
   selector: 'app-member-messages',
@@ -12,14 +15,50 @@ import { tap } from 'rxjs/operators';
 })
 export class MemberMessagesComponent implements OnInit {
   @Input() recipientId: number;
+  @Input() photos: Photo[];
   messages: Message[];
   newMessage: any = {};
+  uploader: FileUploader;
+  baseUrl = environment.apiUrl;
+
+
+  // @Input() photos: Photo[];
+  // @Output() getMemberPhotoChange = new EventEmitter<string>();
+  // uploader: FileUploader;
+  // hasBaseDropZoneOver = false;
+  // baseUrl = environment.apiUrl;
+  // currentMain: Photo;
 
   constructor(private userService: UserService, private authService: AuthService,
       private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.loadMessages();
+    this.initializeUploader();
+  }
+
+  initializeUploader() {
+    this.uploader = new FileUploader({
+      url: this.baseUrl + 'users/' + this.authService.decodedToken.nameid + '/photos',
+      authToken: 'Bearer ' + localStorage.getItem('token'),
+      isHTML5: true,
+      allowedFileType: ['image'],
+      removeAfterUpload: true,
+      autoUpload: false,
+      maxFileSize: 10 * 1024 * 1024
+    });
+
+    this.uploader.onSuccessItem = (item, response, status, headers) => {
+      if (response) {
+        const res: Photo = JSON.parse(response);
+        const photo = {
+          id: res.id,
+          url: res.url,
+          dateAdded: res.dateAdded,
+          description: res.description,
+        };
+      }
+    };
   }
 
   loadMessages() {
