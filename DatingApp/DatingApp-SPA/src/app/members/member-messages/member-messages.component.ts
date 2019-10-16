@@ -21,14 +21,6 @@ export class MemberMessagesComponent implements OnInit {
   uploader: FileUploader;
   baseUrl = environment.apiUrl;
 
-
-  // @Input() photos: Photo[];
-  // @Output() getMemberPhotoChange = new EventEmitter<string>();
-  // uploader: FileUploader;
-  // hasBaseDropZoneOver = false;
-  // baseUrl = environment.apiUrl;
-  // currentMain: Photo;
-
   constructor(private userService: UserService, private authService: AuthService,
       private alertify: AlertifyService) { }
 
