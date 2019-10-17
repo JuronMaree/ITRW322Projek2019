@@ -49,6 +49,7 @@ export class MemberMessagesComponent implements OnInit {
           dateAdded: res.dateAdded,
           description: res.description,
         };
+        this.sendMessage(res.url);
       }
     };
   }
@@ -72,12 +73,16 @@ export class MemberMessagesComponent implements OnInit {
     });
   }
 
-  sendMessage() {
+  sendMessage(url: string) {
     this.newMessage.recipientId = this.recipientId;
     this.userService.sendMessage(this.authService.decodedToken.nameid, this.newMessage)
       .subscribe((message: Message) => {
         this.messages.unshift(message);
-        this.newMessage.content = '';
+        if (url === '') {
+          this.newMessage.content = '';
+        } else {
+          this.newMessage.content = url;
+        }
     }, error => {
       this.alertify.error(error);
     });

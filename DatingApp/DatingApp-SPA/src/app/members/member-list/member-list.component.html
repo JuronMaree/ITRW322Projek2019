@@ -1,5 +1,5 @@
 <div class="text-center mt-3">
-    <h2>Your matches - {{pagination.totalItems}} found</h2>
+    <h2>Contacts - {{pagination.totalItems}} found</h2>
   </div>
 
 <div class="container mt-3">
@@ -35,7 +35,7 @@
             <button type="button" name="orderBy" class="btn btn-primary"
               [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio="lastActive" style="background-color: lightseagreen">Last Active</button>
             <button type="button" name="orderBy" class="btn btn-primary"
-              [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio="created" style="background-color: lightseagreen">Newest Members</button>
+              [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio="created" style="background-color: lightseagreen">Newest Contacts</button>
           </div>
         </div>
 

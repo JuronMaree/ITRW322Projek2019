@@ -119,6 +119,11 @@ namespace DatingApp.API.Data
             return await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
         }
 
+        public async Task<Message> GetMediaUrl(string mediaUrl)
+        {
+            return await _context.Messages.FirstOrDefaultAsync();
+        }
+
         public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
         {
             var messages = _context.Messages.AsQueryable();

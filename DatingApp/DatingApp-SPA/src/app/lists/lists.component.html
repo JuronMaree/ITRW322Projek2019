@@ -1,13 +1,13 @@
 <div class="text-center mt-3">
-    <h2>{{likesParam === 'Likers' ? 'Members who like me' : 'Members who I\'ve Liked'}} : {{pagination.totalItems}}</h2>
+    <h2>{{likesParam === 'Likers' ? 'Contacts who like me' : 'Contacts who I\'ve Liked'}} : {{pagination.totalItems}}</h2>
   </div>
 
 <div class="container mt-3">
 
   <div class="row">
     <div class="btn-group">
-      <button class="btn btn-primary" [(ngModel)]="likesParam" btnRadio="Likers" (click)="loadUsers()" style="background-color: lightseagreen">Members who like me</button>
-      <button class="btn btn-primary" [(ngModel)]="likesParam" btnRadio="Likees" (click)="loadUsers()" style="background-color: lightseagreen">Members who I like</button>
+      <button class="btn btn-primary" [(ngModel)]="likesParam" btnRadio="Likers" (click)="loadUsers()" style="background-color: lightseagreen">Contacts who like me</button>
+      <button class="btn btn-primary" [(ngModel)]="likesParam" btnRadio="Likees" (click)="loadUsers()" style="background-color: lightseagreen">Contacts who I like</button>
     </div>
   </div>
 

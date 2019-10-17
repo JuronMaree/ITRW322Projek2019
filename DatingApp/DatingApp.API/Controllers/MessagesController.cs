@@ -83,6 +83,7 @@ namespace DatingApp.API.Controllers
             messageForCreationDto.SenderId = userId;
 
             var recipient = await _repo.GetUser(messageForCreationDto.RecipientId);
+            var mediaUrl = await _repo.GetMediaUrl(messageForCreationDto.MediaUrl);
 
             if (recipient == null)
                 return BadRequest("Could not find user");
