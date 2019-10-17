@@ -89,7 +89,7 @@ namespace DatingApp.API
             }
             else
             {
-                /*app.UseExceptionHandler(builder => {
+                app.UseExceptionHandler(builder => {
                     builder.Run(async context => {
                         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
@@ -100,10 +100,10 @@ namespace DatingApp.API
                             await context.Response.WriteAsync(error.Error.Message);
                         }
                     });
-                });*/
+                });
                  app.UseHsts();
             }
-            app.UseDeveloperExceptionPage();
+  
 
              app.UseHttpsRedirection();
             // seeder.SeedUsers();
