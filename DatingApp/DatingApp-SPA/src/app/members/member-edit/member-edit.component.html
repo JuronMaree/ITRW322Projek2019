@@ -27,7 +27,7 @@
               <p>{{user.lastActive | timeAgo}}</p>
             </div>
             <div>
-              <strong>Member Since:</strong>
+              <strong>Contact Since:</strong>
               <p>{{user.created | date: 'mediumDate'}}</p>
             </div>
           </div>
@@ -45,9 +45,9 @@
                   <h4>Description</h4>
                   <textarea class="form-control" name="introduction" rows="6" 
                     [(ngModel)]="user.introduction"></textarea>
-                  <h4>Looking For</h4>
-                  <textarea class="form-control" name="lookingFor" rows="6" 
-                    [(ngModel)]="user.lookingFor"></textarea>
+                  <!-- <h4>Looking For</h4>
+                  <textarea class="form-control" name="lookingFor" rows="6"  -->
+                    <!-- [(ngModel)]="user.lookingFor"></textarea> -->
                     <h4>Interests</h4>
                     <textarea class="form-control" name="interests" rows="6" 
                       [(ngModel)]="user.interests"></textarea>
